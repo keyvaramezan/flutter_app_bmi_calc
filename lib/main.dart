@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -25,34 +26,63 @@ class _MyAppState extends State<MyApp> {
           children: [
             Flexible(
                 child: Container(
+                    ////First Row
                     child: Row(
-                      //First Row
               children: [
                 Flexible(
                   fit: FlexFit.tight,
                   child: Container(
-                      padding: EdgeInsets.all(20),
-                      color: Color.fromRGBO(35, 32, 32, 1),
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(35, 32, 32, 1),
+                        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                        boxShadow: <BoxShadow>[
+                          BoxShadow(
+                            color: Color.fromARGB(88, 88, 88, 9),
+                            offset: Offset(2, 2),
+                            blurRadius: 8,
+                          )
+                        ],
+                      ),
+                      margin: EdgeInsets.fromLTRB(10.0, 10.0, 5.0, 10.0),
+                      padding: EdgeInsets.all(45),
                       child: Column(
                         children: [
                           SvgPicture.asset(
                             "assets/mars.svg",
-                            width: 50,
-                          )
+                            width: 90,
+                            color: Colors.white,
+                          ),
+                          Text("Male",
+                              style:
+                                  TextStyle(fontSize: 20, color: Colors.white)),
                         ],
                       )),
                 ),
                 Flexible(
                   fit: FlexFit.tight,
                   child: Container(
-                      padding: EdgeInsets.all(20),
-                      color: Color.fromRGBO(35, 32, 32, 1),
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(35, 32, 32, 1),
+                          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                          boxShadow: <BoxShadow>[
+                            BoxShadow(
+                              color: Color.fromARGB(88, 88, 88, 9),
+                              offset: Offset(2, 2),
+                              blurRadius: 8,
+                            )
+                          ]),
+                      margin: EdgeInsets.fromLTRB(5.0, 10.0, 10.0, 10.0),
+                      padding: EdgeInsets.all(45),
                       child: Column(
                         children: [
                           SvgPicture.asset(
                             "assets/venus.svg",
-                            width: 50,
-                          )
+                            width: 90,
+                            color: Colors.white,
+                          ),
+                          Text("Female",
+                              style:
+                                  TextStyle(fontSize: 20, color: Colors.white)),
                         ],
                       )),
                 ),
@@ -60,6 +90,7 @@ class _MyAppState extends State<MyApp> {
             ))),
             Flexible(
                 child: Container(
+                  //second row
                     child: Row(
               children: [],
             ))),
