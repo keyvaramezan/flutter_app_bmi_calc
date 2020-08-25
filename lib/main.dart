@@ -10,6 +10,9 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  //variables
+  double sliderValue = 172;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -44,17 +47,15 @@ class _MyAppState extends State<MyApp> {
                         ],
                       ),
                       margin: EdgeInsets.fromLTRB(10.0, 10.0, 5.0, 10.0),
-                      padding: EdgeInsets.all(45),
+                      padding: EdgeInsets.all(20),
                       child: Column(
                         children: [
                           SvgPicture.asset(
                             "assets/mars.svg",
-                            width: 90,
+                            width: 50,
                             color: Colors.white,
                           ),
-                          Text("Male",
-                              style:
-                                  TextStyle(fontSize: 20, color: Colors.white)),
+                          Text("Male", style: TextStyle(color: Colors.white)),
                         ],
                       )),
                 ),
@@ -72,17 +73,15 @@ class _MyAppState extends State<MyApp> {
                             )
                           ]),
                       margin: EdgeInsets.fromLTRB(5.0, 10.0, 10.0, 10.0),
-                      padding: EdgeInsets.all(45),
+                      padding: EdgeInsets.all(20),
                       child: Column(
                         children: [
                           SvgPicture.asset(
                             "assets/venus.svg",
-                            width: 90,
+                            width: 50,
                             color: Colors.white,
                           ),
-                          Text("Female",
-                              style:
-                                  TextStyle(fontSize: 20, color: Colors.white)),
+                          Text("Female", style: TextStyle(color: Colors.white)),
                         ],
                       )),
                 ),
@@ -90,10 +89,52 @@ class _MyAppState extends State<MyApp> {
             ))),
             Flexible(
                 child: Container(
-                  //second row
+                    margin: EdgeInsets.fromLTRB(8.0, 8.0 , 8.0, 8.0),
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      color: Color.fromRGBO(35, 32, 32, 1),
+                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                      boxShadow: <BoxShadow>[
+                        BoxShadow(
+                          color: Color.fromARGB(88, 88, 88, 9),
+                          offset: Offset(2, 2),
+                          blurRadius: 8,
+                        )
+                      ],
+                    ),
+                    //second row
                     child: Row(
-              children: [],
-            ))),
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Column(
+                          children: [
+                            Text(
+                              "height",
+                              style: TextStyle(color: Colors.white70),
+                            ),
+                            Row(
+                              children: [
+                                Text(sliderValue.toString().substring(0, 3),
+                                    style: TextStyle(color: Colors.white,fontSize: 26)),
+                                Text("cm",
+                                    style: TextStyle(color: Colors.white70))
+                              ],
+                            ),
+                            CupertinoSlider(
+                                activeColor: Colors.redAccent,
+                                value: sliderValue,
+                                min: 120.0,
+                                max: 240.0,
+                                divisions: 120,
+                                onChanged: (c) {
+                                  setState(() {
+                                    sliderValue = c;
+                                  });
+                                }),
+                          ],
+                        )
+                      ],
+                    ))),
             Flexible(
                 child: Container(
                     child: Row(
