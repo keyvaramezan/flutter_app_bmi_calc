@@ -89,7 +89,7 @@ class _MyAppState extends State<MyApp> {
             ))),
             Flexible(
                 child: Container(
-                    margin: EdgeInsets.fromLTRB(8.0, 8.0 , 8.0, 8.0),
+                    margin: EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 8.0),
                     padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       color: Color.fromRGBO(35, 32, 32, 1),
@@ -115,7 +115,8 @@ class _MyAppState extends State<MyApp> {
                             Row(
                               children: [
                                 Text(sliderValue.toString().substring(0, 3),
-                                    style: TextStyle(color: Colors.white,fontSize: 26)),
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 26)),
                                 Text("cm",
                                     style: TextStyle(color: Colors.white70))
                               ],
@@ -138,7 +139,70 @@ class _MyAppState extends State<MyApp> {
             Flexible(
                 child: Container(
                     child: Row(
-              children: [],
+              children: [
+                Flexible(
+                  fit: FlexFit.tight,
+                  child: Container(
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(35, 32, 32, 1),
+                        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                        boxShadow: <BoxShadow>[
+                          BoxShadow(
+                            color: Color.fromARGB(88, 88, 88, 9),
+                            offset: Offset(2, 2),
+                            blurRadius: 8,
+                          )
+                        ],
+                      ),
+                      margin: EdgeInsets.fromLTRB(10.0, 10.0, 5.0, 10.0),
+                      padding: EdgeInsets.all(20),
+                      child: Column(
+                        children: [
+                          Text("weight", style: TextStyle(color: Colors.white70)),
+                          Text("62", style: TextStyle(color: Colors.white,fontSize: 26)),
+                          Row(children: [
+                            FloatingActionButton(onPressed: () => print("v"),
+                                mini: true,
+                                backgroundColor: Colors.black26,
+                                child: Icon(
+                                  Icons.add,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            FloatingActionButton(onPressed: () => print("b"),
+                              mini: true,
+                              backgroundColor: Colors.black26,
+                              child: Icon(
+                                Icons.remove,
+                                color: Colors.white,
+                              ),
+                            )
+                          ],)
+                        ],
+                      )),
+                ),
+                Flexible(
+                  fit: FlexFit.tight,
+                  child: Container(
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(35, 32, 32, 1),
+                          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                          boxShadow: <BoxShadow>[
+                            BoxShadow(
+                              color: Color.fromARGB(88, 88, 88, 9),
+                              offset: Offset(2, 2),
+                              blurRadius: 8,
+                            )
+                          ]),
+                      margin: EdgeInsets.fromLTRB(5.0, 10.0, 10.0, 10.0),
+                      padding: EdgeInsets.all(20),
+                      child: Column(
+                        children: [
+                          Text("Female", style: TextStyle(color: Colors.white)),
+                        ],
+                      )),
+                ),
+              ],
             ))),
             Flexible(
                 child: Container(
