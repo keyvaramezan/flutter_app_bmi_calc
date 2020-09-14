@@ -15,6 +15,7 @@ class _MyAppState extends State<MyApp> {
   double sliderValue = 172;
   Color firstcColor = Colors.white;
   Color secondcColor = Colors.white;
+  Color buttonColor = Colors.redAccent;
   int weight = 62;
   int age = 26;
 
@@ -58,7 +59,8 @@ class _MyAppState extends State<MyApp> {
                             child: FlatButton(
                               onPressed: () {
                                 setState(() {
-                                  firstcColor = Colors.redAccent;
+                                  firstcColor = Colors.blueAccent;
+                                  buttonColor = firstcColor;
                                   secondcColor = Colors.white;
                                 });
                               },
@@ -94,7 +96,8 @@ class _MyAppState extends State<MyApp> {
                             child: FlatButton(
                               onPressed: () {
                                 setState(() {
-                                  secondcColor = Colors.redAccent;
+                                  secondcColor = Colors.pinkAccent;
+                                  buttonColor = secondcColor;
                                   firstcColor = Colors.white;
                                 });
                               },
@@ -312,7 +315,7 @@ class _MyAppState extends State<MyApp> {
                               ],
                             ));
                   },
-                  color: Colors.redAccent,
+                  color: buttonColor,
                   child: Text(
                     "Calculate",
                     style: TextStyle(color: Colors.white),
